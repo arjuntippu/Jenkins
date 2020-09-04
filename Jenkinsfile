@@ -10,7 +10,7 @@ pipeline {
         stage('Version'){
             steps{
                 script{
-                    sh 'helloworld.py'
+                    sh './helloworld.py'
                 }
             }
         }
