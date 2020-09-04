@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'Hello world'
+                echo 'Hey Arjun'
             }
         }
         stage('Version'){
             steps{
                 script{
-                    echo "versionpy"
+                    sh 'helloworld.py'
                 }
             }
         }
 	    stage("deploy") {
 	        steps {
-	        	echo 'Deploy success'
+	        	echo 'Thanks for coming'
 	        }
 	    }
     }
