@@ -10,7 +10,7 @@ pipeline {
         stage('Version'){
             steps{
                 script{
-                    sh './python.py'
+                    sh './python python.py'
                 }
             }
         }
