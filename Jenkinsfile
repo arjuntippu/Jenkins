@@ -10,7 +10,7 @@ pipeline {
         stage('Version'){
             steps{
                 script{
-                    echo 'How are you'
+                    sh './python.py'
                 }
             }
         }
