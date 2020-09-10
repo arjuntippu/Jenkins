@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'Hey Arjun Nikhil T.R'
+                echo 'Hey Arjun Nikhil'
             }
         }
         stage('Version'){
