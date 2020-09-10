@@ -1,3 +1,4 @@
+#!groovy
 FROM ubuntu:20.04
 
 MAINTAINER Arjun Nikhil
