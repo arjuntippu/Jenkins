@@ -1,19 +1,14 @@
+FROM ubuntu:20.04
 
-FROM dockerfile/ubuntu
+MAINTAINER Arjun Nikhil
 
-RUN \
-  add-apt-repository -y ppa:nginx/stable && \
-  apt-get update && \
-  apt-get install -y nginx && \
-  rm -rf /var/lib/apt/lists/* && \
-  echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
-  chown -R www-data:www-data /var/lib/nginx
+RUN apt-get update \
+    && apt-get install -y nginx \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && echo "daemon off;" >> /etc/nginx/nginx.conf
 
-VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
-
-WORKDIR /etc/nginx
-
-CMD ["nginx"]
+ADD default /etc/nginx/sites-available/default
 
 EXPOSE 80
-EXPOSE 443
+CMD ["nginx"]
